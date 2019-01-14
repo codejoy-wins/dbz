@@ -4,9 +4,12 @@
     margin: 0 auto;
     text-align: center;
 }
+#elite{
+    width: 50%;
+}
 #newbutton{
-    width: 8%;
-    height: 100%;
+    width: 22%;
+    height: 80%;
     background-color: black;
     color: white;
 }
@@ -27,27 +30,31 @@
     color: blue;
     text-align: center;
 }
+#lower{
+    color:purple;
+    width: 100%;
+}
 #heading{
     display: inline-block;
 }
 #content{
-    background-color:magenta;
+    width: 90%;
+    /* background-color:magenta; */
     padding: 5rem;
     height: 3rem;
 }
 #tobe{
     text-align: left;
-    width: 30%;
-    padding: 2rem;
+    width: 20%;
+    padding: 1rem;
     display: inline-block;
 }
 #tobe2{
     text-align: right;
-    width: 30%;
-    padding: 2rem;
-    padding-right: 10rem;
-    float: right;
-    /* display: inline-block; */
+    width: 20%;
+    padding: 1rem;
+    /* float: right; */
+    display: inline-block;
 }
 #now{
     padding: 2rem;
@@ -61,23 +68,23 @@
     text-align: center;
 }
 .small{
-    size: 50%;
+    width: 100%;
 }
 
 
 
 #goku{
     text-align: left;
-    float: left;
+    /* float: left; */
 }
 #hide{
     display: none;
     text-align: right;
-    float: right;
+    /* float: right; */
 }
 #freeza{
     text-align: right;
-    float: right;
+    /* float: right; */
 }
 #hide2{
     display: none;

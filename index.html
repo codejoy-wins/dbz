@@ -9,47 +9,28 @@
 </head>
 <body>
     <div id="container">
-
-        <div id="elite">
-
-            
-
-            <div id="left">
-
-                Left
-
-            </div>
-            <div id="right">
-
-                Right
-
-            </div>
-        </div>
-
-        <div id="upper">
-            <div id="heading">
-                    <h1>Click on Goku</h1>
-            </div>
-        </div>
-        <div id="middle">
-                <div id="content">
-                    <div id="goku">
-                        <h2>Goku's Health: 100</h2>
+                    <div id="middle">
+                            <div id="content">
+                                <div id="goku">
+                                    <!-- <h2>Goku's Health: 100</h2> -->
+                                </div>
+                                    <button id="hide2">Fight</button>
+                                <div id="hide">
+                                        <h2>Enemy's Power Level: 99</h2>
+                                </div>
+                            </div>
                     </div>
-                        <button id="hide2">Fight</button>
-                    <div id="hide">
-                            <h2>Enemy's Health: 99</h2>
+
+                    <div id="lower">
+                            <div id="now">
+                                    <img class="small"src="./goku.jpg" alt="Goku" id="myb">
+                            </div>
+                            <div id="now2">
+                                    <img class="small" src="./freeza.jpeg" alt="Freeza" id="current">
+                            </div>
                     </div>
-                </div>
-        </div>
-        <div id="lower">
-                <div id="now">
-                        <img class="small"src="./goku.jpg" alt="Goku" id="myb">
-                </div>
-                <div id="now2">
-                        <img class="small" src="./freeza.jpeg" alt="Freeza" id="current">
-                </div>
-        </div>
+
+        
     </div>
     <!-- I put the script internally to easily add event listeners -->
     <script>
@@ -84,7 +65,13 @@
         function DisplayHealth(n){
             var health = n;
             document.getElementById('freeza').innerHTML = `
-                Health: <div id="newhealth">${health}</div>
+                Freeza's Power Level: <div id="newhealth">${health}</div>
+            `
+        }
+        function DisplayHealth2(n,name){
+            var health = n;
+            document.getElementById('freeza').innerHTML = `
+                ${name}'s Power Level: <div id="newhealth">${health}</div>
             `
         }
 
@@ -118,16 +105,25 @@
                     "name": "buu",
                     "img": "buu.jpg",
                     "health": 303
+                },
+                {
+                    "name": "dabra",
+                    "img": "dabra.png",
+                    "health": 180
                 }
             ]
             var current = document.getElementById("current");
             console.log(current);
             console.log(current.alt);
-            var i = Math.floor(Math.random(0,1)*3);
+            var i = Math.floor(Math.random(0,1)*4);
             current.src= `./${enemies[i].img}`;
-            DisplayHealth(enemies[i].health);
+            DisplayHealth2(enemies[i].health, enemies[i].name);
             console.log(` New enemy is ${enemies[i].name}`);
             console.log(i);
+            if(current.alt == enemies[i].name){
+                console.log(`${enemies[i].name} recharged`);
+            }
+            current.alt = enemies[i].name;
         }
     </script>
 </body>
