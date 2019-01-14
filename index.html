@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>My U.I.</title>
+</head>
+<body>
+    <div id="container">
+        <div id="upper">
+            <div id="heading">
+                    <h1>Click on Goku</h1>
+            </div>
+        </div>
+        <div id="middle">
+                <div id="content">
+                    <div id="goku">
+                        <h2>Goku's Health: 100</h2>
+                    </div>
+                        <button id="hide2">Fight</button>
+                    <div id="hide">
+                            <h2>Freeza's Health: 99</h2>
+                    </div>
+                </div>
+        </div>
+        <div id="lower">
+                <div id="now">
+                        <img class="small"src="./goku.jpg" alt="Guku" id="myb">
+                </div>
+                <div id="now2">
+                        <img class="small" src="./freeza.jpeg" alt="Guku">
+                </div>
+        </div>
+    </div>
+    <!-- I put the script internally to easily add event listeners -->
+    <script>
+        document.getElementById("myb").addEventListener('click', myFunc);
+
+
+        function myFunc(){
+            console.log("button presses, my function fired");
+            // grab div now and change its id.
+            document.getElementById("now").id = "tobe";
+            document.getElementById("now2").id = "tobe2";
+            document.getElementById("hide").id = "freeza";
+            document.getElementById("hide2").id = "newbutton";
+            document.getElementById("newbutton").addEventListener('click', Fight);
+            DisplayHealth(100);
+
+        }
+
+        function Fight(){
+            console.log("attacked");
+            Attack(10);
+            // DisplayHealth(100);
+            // lower freeza's health
+        }
+
+        function DisplayHealth(n){
+            var health = n;
+            document.getElementById('freeza').innerHTML = `
+                Freeza's Health: ${health}
+            `
+        }
+
+        function Update(){
+            console.log("Update");
+            // learn set interval
+        }
+
+        function Attack(n){
+
+        }
+    </script>
+</body>
+</html>

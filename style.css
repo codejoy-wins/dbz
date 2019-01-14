@@ -1,0 +1,68 @@
+#container{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#upper{
+    color:red;
+    text-align: center;
+}
+#middle{
+    color: blue;
+    text-align: center;
+}
+#heading{
+    display: inline-block;
+}
+#content{
+    background-color:magenta;
+    padding: 5rem;
+}
+#tobe{
+    text-align: left;
+    width: 30%;
+    padding: 2rem;
+    display: inline-block;
+}
+#tobe2{
+    text-align: right;
+    width: 30%;
+    padding: 2rem;
+    padding-right: 10rem;
+    float: right;
+    /* display: inline-block; */
+}
+#now{
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+}
+#now2{
+    display: inline-block;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+}
+.small{
+    size: 50%;
+}
+
+
+
+#goku{
+    text-align: left;
+    float: left;
+}
+#hide{
+    display: none;
+    text-align: right;
+    float: right;
+}
+#freeza{
+    text-align: right;
+    float: right;
+}
+#hide2{
+    display: none;
+}
