@@ -9,6 +9,23 @@
 </head>
 <body>
     <div id="container">
+
+        <div id="elite">
+
+            
+
+            <div id="left">
+
+                Left
+
+            </div>
+            <div id="right">
+
+                Right
+
+            </div>
+        </div>
+
         <div id="upper">
             <div id="heading">
                     <h1>Click on Goku</h1>
@@ -21,16 +38,16 @@
                     </div>
                         <button id="hide2">Fight</button>
                     <div id="hide">
-                            <h2>Freeza's Health: 99</h2>
+                            <h2>Enemy's Health: 99</h2>
                     </div>
                 </div>
         </div>
         <div id="lower">
                 <div id="now">
-                        <img class="small"src="./goku.jpg" alt="Guku" id="myb">
+                        <img class="small"src="./goku.jpg" alt="Goku" id="myb">
                 </div>
                 <div id="now2">
-                        <img class="small" src="./freeza.jpeg" alt="Guku">
+                        <img class="small" src="./freeza.jpeg" alt="Freeza" id="current">
                 </div>
         </div>
     </div>
@@ -53,7 +70,13 @@
 
         function Fight(){
             console.log("attacked");
+            var health = document.getElementById('newhealth').innerHTML;
+            health-=10;
+            document.getElementById('newhealth').innerHTML =health;
             Attack(10);
+            if(health <= 0){
+                Attack(1000);
+            }
             // DisplayHealth(100);
             // lower freeza's health
         }
@@ -61,7 +84,7 @@
         function DisplayHealth(n){
             var health = n;
             document.getElementById('freeza').innerHTML = `
-                Freeza's Health: ${health}
+                Health: <div id="newhealth">${health}</div>
             `
         }
 
@@ -71,7 +94,40 @@
         }
 
         function Attack(n){
+            console.log(`attacked with ${n} force`);
+            if(n==1000){
+                console.log("freeza has died");
+                Next();
+            }
+        }
 
+        function Next(){
+            // replace freeza with new enemy!
+            var enemies = [
+                {
+                    "name": "freeza",
+                    "img": "freeza.jpeg",
+                    "health": 102
+                },
+                {
+                    "name": "cell",
+                    "img": "cell.jpg",
+                    "health": 206
+                },
+                {
+                    "name": "buu",
+                    "img": "buu.jpg",
+                    "health": 303
+                }
+            ]
+            var current = document.getElementById("current");
+            console.log(current);
+            console.log(current.alt);
+            var i = Math.floor(Math.random(0,1)*3);
+            current.src= `./${enemies[i].img}`;
+            DisplayHealth(enemies[i].health);
+            console.log(` New enemy is ${enemies[i].name}`);
+            console.log(i);
         }
     </script>
 </body>

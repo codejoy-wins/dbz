@@ -2,8 +2,23 @@
     width: 100%;
     height: auto;
     margin: 0 auto;
+    text-align: center;
 }
-
+#newbutton{
+    width: 8%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+#left{
+    display: inline-block;
+    width: 45%;
+}
+#right{
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+}
 #upper{
     color:red;
     text-align: center;
@@ -18,6 +33,7 @@
 #content{
     background-color:magenta;
     padding: 5rem;
+    height: 3rem;
 }
 #tobe{
     text-align: left;
